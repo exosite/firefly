@@ -35,24 +35,24 @@ produces:
 ################################################################################
 
 x-exosite-config-parameters:
-  - name:         Authentication
-    description:  Authentication Key
+  - name:         Authorization
+    description:  Authorization Key
     type:         string
     required:     true
-
 
 ################################################################################
 #                                  Security                                    #
 ################################################################################
 securityDefinitions:
   ApiKeyAuth:
-    description: Authentication key
+    description: Authorization key
     type: apiKey
     in: header
     name: Authorization
 
-security:
-  - ApiKeyAuth: []
+################################################################################
+#                                  Parameters                                  #
+################################################################################
 
 parameters:
   Authorization:
@@ -64,7 +64,7 @@ parameters:
     x-exosite-restricted: true
 
 ################################################################################
-#                                           Paths                              #
+#                                    Paths                                     #
 ################################################################################
 paths:
   /send:
@@ -76,14 +76,13 @@ paths:
       x-exosite-example:    >
                     -- test
       parameters:
+        - $ref: "#/parameters/Authorization"
         - name: body
           in: body
           description:  The send data.
           required: true
           schema:
             $ref: "#/definitions/Send"
-      security:
-        - ApiKeyAuth: []
       responses:
         "200":
           description:  messaging sended
