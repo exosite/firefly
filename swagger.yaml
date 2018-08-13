@@ -47,7 +47,6 @@ x-exosite-config-parameters:
 securityDefinitions:
   ApiKeyAuth:
     description: Authentication key
-    x-exosite-secret-field: Authorization key
     type: apiKey
     in: header
     name: Authorization
@@ -69,8 +68,6 @@ parameters:
 ################################################################################
 paths:
   /send:
-    parameters:
-      - $ref: "#/parameters/Authorization"
     post:
       tags:
         - send
