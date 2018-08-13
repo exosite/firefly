@@ -68,6 +68,8 @@ parameters:
 ################################################################################
 paths:
   /send:
+    parameters:
+      - $ref: "#/definitions/Send"
     post:
       tags:
         - send
