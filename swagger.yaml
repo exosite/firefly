@@ -61,7 +61,6 @@ parameters:
     description:  Authorization key
     type:         string
     required:     true
-    # pattern:      ^[0-9a-zA-Z]{34}$
     x-exosite-restricted: true
 
 ################################################################################
@@ -88,17 +87,17 @@ paths:
           description:  messaging sended
           schema:
             description:  messaging sended
-            type: string
+            type: object
         "400":
           description:  Only applies for JSON requests. Indicates that the request could not be parsed as JSON, or it contained invalid fields (for instance, passing a string where a number was expected). The exact failure reason is described in the response and the problem should be addressed before the request can be retried.
           schema:
             description: TBD
-            type: string
+            type: object
         "401":
           description:  There was an error authenticating the sender account.
           schema:
             description: TBD
-            type: string
+            type: object
         default:
           description: error
           schema:
