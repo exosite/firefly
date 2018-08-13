@@ -82,6 +82,8 @@ paths:
           required: true
           schema:
             $ref: "#/definitions/Send"
+      security:
+        - ApiKeyAuth: []
       responses:
         "200":
           description:  messaging sended
