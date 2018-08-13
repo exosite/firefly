@@ -1,0 +1,64 @@
+#content {
+  white-space: pre-wrap;
+}
+
+body {
+  background-color: #ffffff !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+
+div.page-content {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+div.footer {
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 60px;
+  text-align: center;
+}
+
+div.footer a {
+  text-decoration: underline;
+}
+
+div.footer .address {
+  overflow-wrap: normal;
+  padding-left: 2em;
+  padding-right: 2em;
+  word-wrap: break-word;
+}
+
+div.footer .company {
+  color: #353434;
+  font-weight: 700;
+}
+
+div.footer .terms {
+  color: #00BAFF;
+}
+
+div.logo {
+  text-align: center;
+}
+
+div.logo img {
+  margin-bottom: 10px;
+}
+
+div.logo h3 {
+  font-weight: 700;
+}
+
+div.logo h1 {
+  color: #00BAFF;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+div.last_update {
+  font-weight: 700;
+  padding: 20px 0;
+}

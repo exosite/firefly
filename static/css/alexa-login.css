@@ -1,0 +1,139 @@
+body {
+    background-color: #ffffff !important;
+    font-family: 'Nunito Sans', sans-serif !important;
+}
+
+.hide-error {
+    display: none;
+}
+
+div.action {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+div.action .signin-button {
+    background: #00BAFF;
+    border-radius: 30px;
+    border: 15px solid #00BAFF;
+    color: #fff;
+    display: block;
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+div.action .signin-button.fb {
+    background: #4267B2;
+    border: 15px solid #4267B2;
+}
+
+div.action div {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+div.footer {
+    text-align: center;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+div.footer a {
+    text-decoration: underline;
+}
+
+div.footer .address {
+    overflow-wrap: normal;
+    padding-left: 2em;
+    padding-right: 2em;
+    word-wrap: break-word;
+}
+
+div.footer .company {
+    color: #353434;
+    font-weight: 700;
+}
+
+div.footer .terms {
+    color: #00BAFF;
+}
+
+div.login-form {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 40px;
+    padding: 1.2em 0.8em;
+    text-align: left;
+}
+
+div.login-form .email-password-fields {
+    margin-left: 1.5em;
+    margin-right: 3em;
+}
+
+div.login-form .email-password-fields div:first-child {
+    padding-bottom: 3em;
+}
+
+div.login-form .email-password-fields input {
+    border-bottom: 2px #d2d2d2 solid;
+    border-left: 0px;
+    border-radius: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    box-shadow: unset;
+    font-size: 11px;
+    font-weight: lighter;
+    height: 2em;
+    margin: auto;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+div.login-form .email-password-fields p {
+    margin-bottom: .5em;
+}
+
+div.logo img {
+    margin-bottom: 10px;
+}
+
+div.logo h1 {
+    color: #00BAFF;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+div.row {
+    margin-top: 20px !important;
+}
+
+div.error-message {
+    background: #f3f3f3f3;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+div.error-message .error-title {
+    font-size: 17.55px;
+    font-weight: bold;
+    margin: 0px;
+    padding-bottom: 0px;
+}
+
+div.error-message .error-content {
+    font-weight: normal;
+}

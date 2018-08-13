@@ -1,0 +1,443 @@
+{
+  "properties": {
+    "components": {
+      "description": "Component repository",
+      "title": "Component Repository",
+      "patternProperties": {
+        ".*": {
+          "properties": {
+            "hideFromGroup": {
+              "description": "Set true if you want to hide this component from the group control. If you set the value as false, the result would be the same as without this property.",
+              "title": "HideFromGroup",
+              "type": "boolean"
+            },
+            "models": {
+              "description": "Models for Control Items",
+              "items": {
+                "properties": {
+                  "default": {
+                    "description": "default setting of a control item",
+                    "title": "Default",
+                    "type": "number"
+                  },
+                  "dependency": {
+                    "description": "rules to describe the interdependent relationship between different keys",
+                    "items": {
+                      "properties": {
+                        "conditions": {
+                          "id": "conditions",
+                          "items": {
+                            "properties": {
+                              "key": {
+                                "id": "esh",
+                                "pattern": "H[0-9A-F]+|\\*",
+                                "type": "string"
+                              },
+                              "op": {
+                                "enum": ["eq", "neq", "lt", "lte", "gt", "gte"]
+                              },
+                              "target": {
+                                "type": "number"
+                              }
+                            },
+                            "required": [
+                              "key",
+                              "op",
+                              "target"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "required": [
+                        "conditions"
+                      ],
+                      "type": "object"
+                    },
+                    "title": "Dependency Rules",
+                    "type": "array"
+                  },
+                  "disable": {
+                    "items": {
+                      "properties": {
+                        "conditions": {
+                          "$ref": "conditions"
+                        }
+                      },
+                      "required": [
+                        "conditions"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "key": {
+                    "$ref": "esh",
+                    "description": "The field the control item interacts with.",
+                    "title": "Key"
+                  },
+                  "values": {
+                    "id": "values",
+                    "items": {
+                      "properties": {
+                        "text": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "oneOf": [{
+                            "enum": ["*"]
+                          }, {
+                          "type": "number"
+                          }]
+                        }
+                      },
+                      "required": [
+                        "value"
+                      ],
+                      "type": "object"
+                    },
+                    "anyOf": [{
+                      "type": "array"
+                    },
+                    {
+                      "required": [
+                        "max",
+                        "min",
+                        "step"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "required": [
+                        "func"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "required": [
+                        "rules"
+                      ],
+                      "type": "object"
+                    }
+                    ],
+                    "properties": {
+                      "max": {
+                        "type": "number"
+                      },
+                      "min": {
+                        "type": "number"
+                      },
+                      "step": {
+                        "type": "number"
+                      },
+                      "func": {
+                        "type": "string"
+                      },
+                      "rules": {
+                        "items": {
+                          "properties": {
+                            "conditions": {
+                              "$ref": "conditions"
+                            }
+                          },
+                          "required": [
+                            "conditions"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "title": "Values"
+                  }
+                },
+                "required": [
+                  "key"
+                ],
+                "type": "object"
+              },
+              "title": "Models",
+              "type": "array"
+            },
+            "title": {
+              "description": "Title to be displayed",
+              "title": "Title",
+              "type": "string"
+            },
+            "type": {
+              "description": "UI component types",
+              "pattern": "^(?!\\s*$).+",
+              "title": "Type",
+              "type": "string"
+            }
+          },
+          "required": [
+            "models",
+            "type"
+          ],
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "controlLayout": {
+      "id": "layout",
+      "description": "Layout of the Control Items in the Device UI.",
+      "properties": {
+        "primary": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "secondary": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "primary"
+      ],
+      "title": "Control Layout",
+      "type": "object"
+    },
+    "deviceId": {
+      "description": "Device ID",
+      "title": "Device ID",
+      "type": ["number", "string"]
+    },
+    "errorFields": {
+      "description": "List of fields that carry error information",
+      "items": {
+        "properties": {
+          "key": {
+            "$ref": "esh"
+          },
+          "values": {
+            "$ref": "values"
+          }
+        },
+        "type": "object"
+      },
+      "title": "Error Fields",
+      "type": "array"
+    },
+    "familyMembers": {
+      "description": "Definition: Supported devices under this family.",
+      "items": {
+        "type": "string"
+      },
+      "title": "Family Members",
+      "type": "array"
+    },
+    "familyName": {
+      "description": "Name of individual config files",
+      "title": "Family Name",
+      "type": "string"
+    },
+    "hiddenFields": {
+      "description": "List of hidden control items",
+      "items": {
+        "type": "string"
+      },
+      "title": "Hidden Fields",
+      "type": "array"
+    },
+    "integration": {
+      "properties": {
+        "traits": {
+          "items": {
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "enum": ["light", "switch", "smartplug", "thermostat", "smartlock"]
+              },
+              "append_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "attributes": {
+                "properties": {
+                  "ac_mode": {
+                    "properties": {
+                      "key": {
+                        "$ref": "esh"
+                      },
+                      "values": {
+                        "properties": {
+                          "auto": {
+                            "type": "number"
+                          },
+                          "cool": {
+                            "type": "number"
+                          },
+                          "eco": {
+                            "type": "number"
+                          },
+                          "heat": {
+                            "type": "number"
+                          },
+                          "off": {
+                            "type": "number"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "on_off": {
+                    "properties": {
+                      "key": {
+                        "$ref": "esh"
+                      },
+                      "values": {
+                        "properties": {
+                          "off": {
+                            "type": "number"
+                          },
+                          "on": {
+                            "type": "number"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "percentage": {
+                    "id": "before-key-max-min",
+                    "properties": {
+                      "before": {
+                        "items": {
+                          "properties": {
+                            "key": {
+                              "$ref": "esh"
+                            },
+                            "value": {
+                              "type": "number"
+                            }
+                          }
+                        },
+                        "type": "array"
+                      },
+                      "key": {
+                        "$ref": "esh"
+                      },
+                      "max": {
+                        "id": "number-0-100",
+                        "maximum": 100,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "min": {
+                        "$ref": "number-0-100"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "temperature": {
+                    "id": "temperature",
+                    "properties": {
+                      "key": {
+                        "$ref": "esh"
+                      },
+                      "unit": {
+                        "enum": ["celsius", "fahrenheit"]
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "target_temperature": {
+                    "$ref": "temperature"
+                  },
+                  "low_target_temperature": {
+                    "$ref": "temperature"
+                  },
+                  "high_target_temperature": {
+                    "$ref": "temperature"
+                  },
+                  "humidity": {
+                    "properties": {
+                      "key": {
+                        "$ref": "esh"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "color": {
+                    "properties": {
+                      "key": {
+                        "$ref": "esh"
+                      },
+                      "unit": {
+                        "enum": ["rgb"]
+                      }
+                    }
+                  },
+                  "color_temperature": {
+                    "properties": {
+                      "key": {
+                        "$ref": "esh"
+                      },
+                      "unit": {
+                        "enum": ["kelvin"]
+                      },
+                      "max": {
+                        "id": "number-1000-10000",
+                        "maximum": 10000,
+                        "minimum": 1000,
+                        "type": "number"
+                      },
+                      "min": {
+                        "$ref": "number-1000-10000"
+                      }
+                    }
+                  },
+                  "brightness": {
+                    "$ref": "before-key-max-min"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "append_name",
+              "attributes"
+            ],
+            "type": "object"
+          },
+          "title": "Traits",
+          "type": "array"
+        }
+      },
+      "required": [
+        "traits"
+      ],
+      "title": "Integration schema",
+      "type": "object"
+    },
+    "scheduleLayout": {
+      "$ref": "layout",
+      "description": "Layout of the Control Items in the Schedule page.",
+      "title": "Schedule Layout"
+    }
+  },
+  "required": [
+    "components",
+    "controlLayout",
+    "deviceId",
+    "familyMembers",
+    "familyName",
+    "scheduleLayout"
+  ]
+}

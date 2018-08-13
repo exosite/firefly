@@ -1,0 +1,67 @@
+$font_bold: 700;
+$primary_color: #00BAFF;
+
+.body {
+  white-space: pre-wrap;
+}
+
+.container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+div {
+  .legal-footer-padding {
+    margin-top: 60px;
+  }
+
+  .footer {
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+
+    a {
+      text-decoration: underline;
+    }
+
+    .address {
+      overflow-wrap: normal;
+      padding-left: 2em;
+      padding-right: 2em;
+      word-wrap: break-word;
+    }
+
+    .company {
+      color: #353434;
+      font-weight: 700;
+    }
+
+    .terms {
+      color: $primary_color;
+    }
+  }
+
+  .last_update {
+    font-weight: $font_bold;
+    padding: 20px 0;
+  }
+
+  .logo {
+    text-align: center;
+
+    img {
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      color: $primary_color;
+      font-size: 30px;
+      font-weight: $font_bold;
+      margin: 20px 0;
+    }
+
+    h3 {
+      font-weight: $font_bold;
+    }
+  }
+}

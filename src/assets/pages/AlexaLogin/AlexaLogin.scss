@@ -1,0 +1,142 @@
+$font_light: 400;
+$font_normal: 500;
+$font_bold: 700;
+$primary_color: #00BAFF;
+$fb_color: #4267B2;
+
+.action {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2em;
+
+  div {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .signin-button {
+    background: $primary_color;
+    border-radius: 30px;
+    border: 15px solid $primary_color;
+    color: #ffffff;
+    display: block;
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: $font_bold;
+    line-height: 1.1;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+
+  }
+
+  .fb {
+    background: $fb_color;
+    border: 15px solid $fb_color;
+  }
+}
+
+.alexa-login-footer-padding {
+  margin-top: 60px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  font-weight: normal;
+
+  a {
+    text-decoration: underline;
+  }
+
+  .address {
+    overflow-wrap: normal;
+    padding-left: 2em;
+    padding-right: 2em;
+    word-wrap: break-word;
+  }
+
+  .company {
+    color: #353434;
+    font-weight: $font_bold;
+  }
+
+  .terms {
+    color: $primary_color;
+  }
+}
+
+.login-form {
+  font-size: 15px;
+  font-weight: $font_bold;
+  margin-top: 40px;
+  padding: 1.2em 0.8em;
+  text-align: left;
+
+  .email-password-fields {
+    margin-left: 1.5em;
+    margin-right: 3em;
+
+    div {
+      &:first-child {
+        padding-bottom: 3em;
+      }
+    }
+
+    input {
+      border-bottom: 2px #d2d2d2 solid;
+      border-left: 0px;
+      border-radius: 0px;
+      border-right: 0px;
+      border-top: 0px;
+      box-shadow: unset;
+      font-size: 11px;
+      font-weight: $font_light;
+      height: 2em;
+      margin: auto;
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+    }
+
+    p {
+      margin-bottom: .5em;
+    }
+  }
+
+}
+
+.logo {
+  img {
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    color: $primary_color;
+    font-size: 30px;
+    font-weight: $font_bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+
+.error-message {
+  background: #f3f3f3f3;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding: 10px;
+
+  .error-title {
+    font-size: 17.55px;
+    font-weight: $font_bold;
+    margin: 0px;
+    padding-bottom: 0px;
+  }
+
+  .error-content {
+    font-weight: $font_normal;
+  }
+}
