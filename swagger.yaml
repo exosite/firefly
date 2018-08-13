@@ -69,7 +69,7 @@ parameters:
 paths:
   /send:
     parameters:
-      - $ref: "#/definitions/Send"
+      - $ref: "#/parameters/Authorization"
     post:
       tags:
         - send
