@@ -86,10 +86,7 @@ paths:
         "200":
           description:  messaging sended
           schema:
-            description:  messaging sended
-            type: object
-            schema:
-              $ref: "#/definitions/Success"
+            $ref: "#/definitions/Success"
 
         "400":
           description:  Only applies for JSON requests. Indicates that the request could not be parsed as JSON, or it contained invalid fields (for instance, passing a string where a number was expected). The exact failure reason is described in the response and the problem should be addressed before the request can be retried.
