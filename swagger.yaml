@@ -88,6 +88,9 @@ paths:
           schema:
             description:  messaging sended
             type: object
+            schema:
+              $ref: "#/definitions/Success"
+
         "400":
           description:  Only applies for JSON requests. Indicates that the request could not be parsed as JSON, or it contained invalid fields (for instance, passing a string where a number was expected). The exact failure reason is described in the response and the problem should be addressed before the request can be retried.
           schema:
@@ -194,3 +197,35 @@ definitions:
       type:
         type: string
         description: Error type
+  Success:
+    description: Request success
+    type: object
+    properties:
+      multicast_id:
+        description: Unique ID (number) identifying the multicast message.
+        type: number
+      success:
+        description: Number of messages that were processed without an error.
+        type: number
+      failure:
+        description: Number of messages that could not be processed.
+        type: number
+      canonical_ids:
+        description: Number of results that contain a canonical registration token.
+        type: number
+      results:
+        description: Array of objects representing the status of the messages processed.
+        type: array
+        items: 
+          type: object
+          description: TBD
+          properties:
+            message_id:
+              description: String specifying a unique ID for each successfully processed message.
+              type: string
+            registration_id:
+              description: Optional string specifying the canonical registration token for the client app that the message was processed and sent to.
+              type: string
+            error:
+              description: String specifying the error that occurred when processing the message for the recipient.
+              type: string
