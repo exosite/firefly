@@ -40,6 +40,30 @@ x-exosite-config-parameters:
     type:         string
     required:     true
 
+
+################################################################################
+#                                  Security                                    #
+################################################################################
+securityDefinitions:
+  ApiKeyAuth:
+    description: Authentication key
+    type: apiKey
+    in: header
+    name: Authorization
+
+security:
+  - ApiKeyAuth: []
+
+parameters:
+  Authorization:
+    name:         Authorization
+    in:           header
+    description:  Authorization key
+    type:         string
+    required:     true
+    # pattern:      ^[0-9a-zA-Z]{34}$
+    x-exosite-restricted: true
+
 ################################################################################
 #                                           Paths                              #
 ################################################################################
