@@ -19,3 +19,4 @@ Firefly is a Murano Exchange Element which provides a Murano Service to be used 
 * [App Download](https://rink.hockeyapp.net/apps/22fba48496734bb1ad580c42c106f5b0/app_versions/98) - Android version
 * [Firebase JS doc](https://firebase.google.com/docs/cloud-messaging/js/client) - Firebase for Javascript 
 Mon Aug 13 12:11:20 CST 2018
+Mon Aug 13 12:32:10 CST 2018
