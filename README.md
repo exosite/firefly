@@ -1,6 +1,6 @@
 # Firefly
 
-![a cute firefly](img/firefly.png =300x "Firefly")
+![a cute firefly](./img/firefly.png =300x)
 
 Firefly is a Murano Exchange Element which provides a Murano Service to be used for Google Firebase Push Notification.
 
