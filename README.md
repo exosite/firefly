@@ -1,7 +1,7 @@
 # Firefly
 
 Firefly is a Murano Exchange Element which provides a Murano Service to be used for Google Firebase Push Notification.
-<img src="./img/firefly.png" alt="A cute firefly" width="300px"/>
+<img src="./img/firefly.png" alt="A cute firefly" width="300px" class=center/>
 
 # New Features!
 
